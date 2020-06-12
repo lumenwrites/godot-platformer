@@ -1,0 +1,191 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://art/player_idle.png" type="Texture" id=2]
+[ext_resource path="res://art/cursor.png" type="Texture" id=3]
+
+[sub_resource type="SphereMesh" id=1]
+radius = 500.0
+height = 1000.0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16, 16 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="RopeRadius" type="MeshInstance2D" parent="."]
+modulate = Color( 0.25098, 0.564706, 1, 0.0117647 )
+position = Vector2( 0, -16 )
+mesh = SubResource( 1 )
+
+[node name="RopeRaycasts" type="Node2D" parent="."]
+position = Vector2( 0, -16 )
+
+[node name="RopeRaycast01" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 25, 0 )
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast02" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 24.9049, -2.17889 )
+rotation = -0.0872665
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast03" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 24.9049, 2.17889 )
+rotation = 0.0872665
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast04" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 24.6202, -4.34121 )
+rotation = -0.174533
+scale = Vector2( 1, 1 )
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast05" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 24.6202, 4.3412 )
+rotation = 0.174533
+scale = Vector2( 1, 1 )
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast06" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 24.1481, -6.47048 )
+rotation = -0.261799
+scale = Vector2( 1, 1 )
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast07" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 24.1481, 6.47048 )
+rotation = 0.261799
+scale = Vector2( 1, 1 )
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast08" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 23.4923, -8.5505 )
+rotation = -0.349066
+scale = Vector2( 1, 1 )
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast09" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 23.4923, 8.5505 )
+rotation = 0.349066
+scale = Vector2( 1, 1 )
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast10" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 22.6577, -10.5655 )
+rotation = -0.436332
+scale = Vector2( 1, 1 )
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast11" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 22.6577, 10.5655 )
+rotation = 0.436332
+scale = Vector2( 1, 1 )
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast12" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 21.6506, -12.5 )
+rotation = -0.523599
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast13" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 21.6506, 12.5 )
+rotation = 0.523599
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast14" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 20.4788, -14.3394 )
+rotation = -0.610865
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast15" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 20.4788, 14.3394 )
+rotation = 0.610865
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast16" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 19.1511, -16.0697 )
+rotation = -0.698132
+scale = Vector2( 1, 1 )
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast17" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 19.1511, 16.0697 )
+rotation = 0.698132
+scale = Vector2( 1, 1 )
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast18" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 17.6777, -17.6777 )
+rotation = -0.785398
+scale = Vector2( 1, 1 )
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast19" type="RayCast2D" parent="RopeRaycasts"]
+position = Vector2( 17.6777, 17.6777 )
+rotation = 0.785398
+scale = Vector2( 1, 1 )
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="RopeRaycast" type="RayCast2D" parent="."]
+visible = false
+position = Vector2( 0, -16 )
+enabled = true
+cast_to = Vector2( 500, 0 )
+
+[node name="HookPoint" type="Sprite" parent="."]
+visible = false
+position = Vector2( -384, -16 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -16 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -16 )
+texture = ExtResource( 2 )
+
+[node name="RightWallRaycast1" type="RayCast2D" parent="."]
+position = Vector2( 0, -4 )
+enabled = true
+cast_to = Vector2( 17, 0 )
+
+[node name="RightWallRaycast2" type="RayCast2D" parent="."]
+position = Vector2( 0, -32 )
+enabled = true
+cast_to = Vector2( 17, 0 )
+
+[node name="LeftWallRaycast1" type="RayCast2D" parent="."]
+position = Vector2( 0, -4 )
+enabled = true
+cast_to = Vector2( -17, 0 )
+
+[node name="LeftWallRaycast2" type="RayCast2D" parent="."]
+position = Vector2( 0, -32 )
+enabled = true
+cast_to = Vector2( -17, 0 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2, 2 )

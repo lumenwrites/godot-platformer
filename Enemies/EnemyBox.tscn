@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Enemies/EnemyBox.gd" type="Script" id=1]
+[ext_resource path="res://art/enemy_strong.png" type="Texture" id=2]
+[ext_resource path="res://Environment/Trampoline.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 23.1105, 16 )
+
+[node name="EnemyBox" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -32 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -16.1 )
+shape = SubResource( 1 )
+
+[node name="Trampoline" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -48 )
+[connection signal="body_entered" from="." to="." method="_on_EnemyBox_body_entered"]

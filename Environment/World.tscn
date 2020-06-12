@@ -1,0 +1,150 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Environment/TileMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Environment/Key.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Environment/Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Environment/Background.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Environment/Saw.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Environment/Spikes.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Environment/Gold.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemies/EnemyBox.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Enemies/Cannon.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Environment/Powerup.tscn" type="PackedScene" id=11]
+[ext_resource path="res://art/gold.png" type="Texture" id=12]
+[ext_resource path="res://fonts/Kenney Bold.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://GUI/HUD.gd" type="Script" id=14]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 13 )
+
+[node name="World" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource( 5 )]
+
+[node name="TileMap" parent="." instance=ExtResource( 2 )]
+
+[node name="Door" parent="." instance=ExtResource( 4 )]
+position = Vector2( 160, 896 )
+
+[node name="Key" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1792, 160 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96, 384 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 960, 540 )
+current = true
+zoom = Vector2( 2, 2 )
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="Spikes" parent="Spikes" instance=ExtResource( 7 )]
+position = Vector2( 608, 1024 )
+
+[node name="Spikes2" parent="Spikes" instance=ExtResource( 7 )]
+position = Vector2( 672, 1024 )
+
+[node name="Spikes3" parent="Spikes" instance=ExtResource( 7 )]
+position = Vector2( 736, 1024 )
+
+[node name="Spikes16" parent="Spikes" instance=ExtResource( 7 )]
+position = Vector2( 416, 1024 )
+
+[node name="Spikes15" parent="Spikes" instance=ExtResource( 7 )]
+position = Vector2( 480, 1024 )
+
+[node name="Spikes14" parent="Spikes" instance=ExtResource( 7 )]
+position = Vector2( 544, 1024 )
+
+[node name="Spikes17" parent="Spikes" instance=ExtResource( 7 )]
+position = Vector2( 352, 1024 )
+
+[node name="Spikes4" parent="Spikes" instance=ExtResource( 7 )]
+position = Vector2( 800, 1024 )
+
+[node name="Spikes5" parent="Spikes" instance=ExtResource( 7 )]
+position = Vector2( 864, 1024 )
+
+[node name="Spikes6" parent="Spikes" instance=ExtResource( 7 )]
+position = Vector2( 928, 1024 )
+
+[node name="Spikes8" parent="Spikes" instance=ExtResource( 7 )]
+position = Vector2( 1504, 1088 )
+
+[node name="Spikes7" parent="Spikes" instance=ExtResource( 7 )]
+position = Vector2( 1568, 1088 )
+
+[node name="Spikes13" parent="Spikes" instance=ExtResource( 7 )]
+position = Vector2( 1632, 1088 )
+
+[node name="Spikes12" parent="Spikes" instance=ExtResource( 7 )]
+position = Vector2( 1696, 1088 )
+
+[node name="Spikes11" parent="Spikes" instance=ExtResource( 7 )]
+position = Vector2( 1760, 1088 )
+
+[node name="Spikes10" parent="Spikes" instance=ExtResource( 7 )]
+position = Vector2( 1824, 1088 )
+
+[node name="Saw" parent="Spikes" instance=ExtResource( 6 )]
+position = Vector2( 408, 224 )
+
+[node name="Cannon" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1568, 96 )
+rotation = 3.14159
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="EnemyBox" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 1184, 1024 )
+
+[node name="EnemyBox2" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 416, 448 )
+
+[node name="Pickups" type="Node2D" parent="."]
+
+[node name="Gold" parent="Pickups" instance=ExtResource( 8 )]
+position = Vector2( 1312, 992 )
+
+[node name="Gold2" parent="Pickups" instance=ExtResource( 8 )]
+position = Vector2( 96, 160 )
+
+[node name="Gold3" parent="Pickups" instance=ExtResource( 8 )]
+position = Vector2( 1824, 992 )
+
+[node name="Powerup" parent="Pickups" instance=ExtResource( 11 )]
+position = Vector2( 416, 864 )
+
+[node name="Powerup2" parent="Pickups" instance=ExtResource( 11 )]
+position = Vector2( 544, 224 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+scale = Vector2( 0.5, 0.5 )
+transform = Transform2D( 0.5, 0, 0, 0.5, 0, 0 )
+script = ExtResource( 14 )
+
+[node name="Control" type="Control" parent="HUD"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gold" type="Sprite" parent="HUD/Control"]
+position = Vector2( 80, 32 )
+texture = ExtResource( 12 )
+
+[node name="Label" type="Label" parent="HUD/Control"]
+margin_left = 112.0
+margin_top = 12.0
+margin_right = 168.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
